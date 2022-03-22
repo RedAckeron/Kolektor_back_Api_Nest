@@ -9,13 +9,16 @@ export class GameService {
     constructor(@InjectRepository(GameEntity) private repo: Repository<GameEntity>) {
     }
 
+    /*
+    *GET findAll : retourne tout les resulstats
+    */
     async findAll(): Promise<GameEntity[]> {
         //return this.repo.find({where: {title: 'Demo-TypeOrm'}});
         return this.repo.find();
     }
 
     async findByName(name:string): Promise<GameEntity[]> {
-        return this.repo.find({where: {title: 'super mario'}});
+        return this.repo.find({where: {title:name,}});
     }
 
     async countAll(): Promise<number> {

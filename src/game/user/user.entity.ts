@@ -2,7 +2,7 @@ import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity('User')
 export class UserEntity {
-    @PrimaryGeneratedColumn() id:string;
+    @PrimaryGeneratedColumn()id:string;
     
     @Column()
     private login: string; 
@@ -12,7 +12,7 @@ export class UserEntity {
     private dt_in: Number; 
     @Column() 
     private dt_last_log: Number;     
-
+    
     get Login(): string { return this.login; }
     set Login(v: string) { this.login = v; }
    

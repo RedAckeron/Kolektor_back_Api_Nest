@@ -13,20 +13,19 @@ export class GameController {
   @Get('/count')
   async countAll() {return this.service.countAll();}
   
-  @Get('/findgame/:name')
-  async findgame()
+  @Get('/find/:name')
+  async findgame(name:string)
     {
-      
+    return this.service.findByName(name);
     }
 
   @Post()
-  async createOne(@Body() dto: GameEntity) {
-
+  async createOne(@Body() dto: GameEntity) 
+    {
     console.table(dto)
     const entity = new GameEntity();
     entity.Title = dto.Title;
     entity.Dt_release=dto.Dt_release;
-   
     return this.service.insert(entity);
-  }
+    }
 }
