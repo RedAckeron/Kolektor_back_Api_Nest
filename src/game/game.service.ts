@@ -21,11 +21,20 @@ export class GameService {
         return this.repo.find({where: {title:name,}});
     }
 
+    async findplatform(id_game:number): Promise<GameEntity[]> {
+        return this.repo.find({where: {title:name,}});
+    }
+
     async countAll(): Promise<number> {
     return this.repo.count();
     }
 
     async insert(game: GameEntity): Promise<GameEntity> {
-        return this.repo.save(game);
+        console.log(game);
+        //on verifie que le jeux existe pas deja sur le ctritere du titre
+        const finded = await this.repo.findOne({where : {title: game.Title}});
+        //console.log(finded);
+        //si il existe pas on l injecte
+        if(!finded)return this.repo.save(game);
     }
 }
