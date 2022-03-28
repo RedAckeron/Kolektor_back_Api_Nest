@@ -1,6 +1,6 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
-import { PlatformEntity } from './platform.entity';
 import { PlatformService } from './platform.service';
+import { PlatformEntity } from './platform.entity';
 
 @Controller('/platform')
 export class PlatformController {

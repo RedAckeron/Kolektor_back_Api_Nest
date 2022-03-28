@@ -30,11 +30,11 @@ export class GameService {
     }
 
     async insert(game: GameEntity): Promise<GameEntity> {
-        console.log(game);
         //on verifie que le jeux existe pas deja sur le ctritere du titre
         const finded = await this.repo.findOne({where : {title: game.Title}});
         //console.log(finded);
         //si il existe pas on l injecte
+        console.log(game);
         if(!finded)return this.repo.save(game);
     }
 }

@@ -13,11 +13,12 @@ export class PlatformService {
     }
 
     async insert(platform: PlatformEntity): Promise<PlatformEntity> {
-        console.log(platform);
+        //console.log(platform);
         //on verifie que le jeux existe pas deja sur le ctritere du titre
         const finded = await this.repo.findOne({where : {title: platform.Title}});
         //console.log(finded);
         //si il existe pas on l injecte
+        console.table(platform)
         if(!finded)return this.repo.save(platform);
     }
 }
