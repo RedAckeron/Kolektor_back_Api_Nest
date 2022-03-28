@@ -21,6 +21,9 @@ export class GameService {
         return this.repo.find({where: {title:name,}});
     }
 
+    async show_one_by_id(id:number): Promise<GameEntity[]> {
+        return this.repo.find({where: {api_id_game:id,}});
+    }
     async findplatform(id_game:number): Promise<GameEntity[]> {
         return this.repo.find({where: {title:name,}});
     }

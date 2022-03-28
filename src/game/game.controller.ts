@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { GameService } from './game.service';
 import { GameEntity } from './game.entity';
 import { Entity } from 'typeorm';
@@ -19,6 +19,13 @@ export class GameController {
     {
     return this.service.findByName(name);
     }
+//async show_all_for_user(@Param('id') id:number)
+
+  @Get('/show_one_by_id/:id')
+    async show_one_by_id(@Param('id') id:number)
+      {
+      return this.service.show_one_by_id(id);
+      }
 
   @Post('/add_one')
   async createOne(@Body() dto: any) 
@@ -27,7 +34,6 @@ export class GameController {
     const entity = new GameEntity();
 
     entity.Api_id_game = dto.api_id_game;
-    
     entity.Title=dto.title;
     entity.Api_id_game = dto.api_id_game;
     //entity.Api_id_platform = dto.api_id_platform;

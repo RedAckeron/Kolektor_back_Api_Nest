@@ -43,15 +43,4 @@ async add_user(@Body() dto:UserEntity)
   return this.user.add_user(entity);
   }
 
-
-/*
-@Post()
-async createOne(@Body() dto: UserEntity) 
-  {
-  const entity = new UserEntity();
-  entity.id = dto.id;
-  entity.Login = dto.Login;
-  return this.user.insert(entity);
-  }
-  */
 }

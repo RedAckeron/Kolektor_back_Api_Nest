@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { User_game_platformController } from './user_game_platform.controller';
-import { User_game_platformEntity } from './user_game_platform.entity';
+import { User_game_platformEntity } from './entity/user_game_platform.entity';
 import { User_game_platformService } from './user_game_platform.service';
 
 @Module({
