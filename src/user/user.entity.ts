@@ -9,9 +9,9 @@ export class UserEntity {
     @Column() 
     private password: string;   
     @Column() 
-    private dt_in: Number; 
+    private dt_in:number=(Date.now()/1000);
     @Column() 
-    private dt_last_log: Number;     
+    private dt_last_log: number;
     
     get Login(): string { return this.login; }
     set Login(v: string) { this.login = v; }
@@ -19,9 +19,9 @@ export class UserEntity {
     get Password(): string { return this.password; }
     set Password(v: string) { this.password = v; }
     
-    get Dt_last_log(): Number { return this.dt_last_log; }
-    set Dt_last_log(v: Number) { this.dt_last_log = v; }
+    get Dt_last_log(): number { return this.dt_last_log; }
+    set Dt_last_log(v: number) { this.dt_last_log = v; }
     
-    get Dt_in(): Number { return this.dt_in; }
-    set Dt_in(v: Number) { this.dt_in = v; }
+    get Dt_in(): number { return this.dt_in; }
+    set Dt_in(v: number) { this.dt_in = v; }
 }
