@@ -9,6 +9,9 @@ export class GameEntity {
     @Column()
     private title: string;
 
+    @Column()
+    private img: string;
+
     @Column({type:'bigint'})
     private dt_release: number;
 
@@ -20,6 +23,9 @@ export class GameEntity {
 
     get Title(): string { return this.title; }
     set Title(v: string) { this.title = v; }
+    
+    get Img(): string { return this.img; }
+    set Img(v: string) { this.img = v; }
     
     get Dt_release(): number { return this.dt_release; }
     set Dt_release(v: number) { this.dt_release = v; }

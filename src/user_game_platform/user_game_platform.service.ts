@@ -7,11 +7,15 @@ export class User_game_platformService {
 
     constructor(@InjectRepository(User_game_platformEntity) private repo: Repository<User_game_platformEntity>) {}
     
+    async count_all():Promise<number>
+        {
+        return this.repo.count();
+        }
+
     async count_all_for_user(id:number):Promise<number>
         {
         return this.repo.count({where: {id_user:id}});
         }
-
     async show_all_for_user(id:number):Promise<any>
         {
         return this.repo.find({where: {id_user:id}});

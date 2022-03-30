@@ -9,6 +9,13 @@ export class User_game_platformController {
 constructor(private service: User_game_platformService) { }
 
 
+
+@Get('/count_all/')
+async count_all()
+    {
+    return this.service.count_all();
+    }
+
 @Get('/count_all_for_user/:id')
 async count_all_for_user(@Param('id') id:number)
     {

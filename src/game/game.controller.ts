@@ -30,13 +30,13 @@ export class GameController {
   @Post('/add_one')
   async createOne(@Body() dto: any) 
     {
-    //console.table(dto)
+  
     const entity = new GameEntity();
 
     entity.Api_id_game = dto.api_id_game;
     entity.Title=dto.title;
+    entity.Img=dto.img;
     entity.Api_id_game = dto.api_id_game;
-    //entity.Api_id_platform = dto.api_id_platform;
     entity.Dt_release=dto.dt_release;
     
     
