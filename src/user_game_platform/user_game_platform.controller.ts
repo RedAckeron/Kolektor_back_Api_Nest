@@ -41,4 +41,5 @@ async add_platform(@Body() ugp_to_send_tmp: User_game_platformEntity)
     console.table(ugp_to_send)
     return this.service.add_user_game_platform(ugp_to_send);
     }
+    
 }

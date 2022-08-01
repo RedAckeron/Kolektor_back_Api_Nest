@@ -7,9 +7,9 @@ import { Repository } from 'typeorm';
 export class PlatformService {
     constructor(@InjectRepository(PlatformEntity) private repo: Repository<PlatformEntity>) {}
 
-    async Show_one(): Promise<PlatformEntity[]> {
+    async show_one(id:number): Promise<PlatformEntity[]> {
         //return this.repo.find({where: {title: 'Demo-TypeOrm'}});
-        return this.repo.find();
+        return this.repo.find({where:{api_id_platform:id}});
     }
 
     async insert(platform: PlatformEntity): Promise<PlatformEntity> {

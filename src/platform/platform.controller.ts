@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { PlatformService } from './platform.service';
 import { PlatformEntity } from './platform.entity';
 
@@ -11,10 +11,12 @@ show_all()
     {
 
     }
-@Get('/show_one/:id')
-show_one()
-    {
+    //async show_all_for_user(@Param('id') id:number)
 
+@Get('/show_one/:id')
+async show_one(@Param('id') id:number)
+    {
+    return this.service.show_one(id)
     }
 
 @Post('/add_one')
